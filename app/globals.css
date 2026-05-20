@@ -1,26 +1,110 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-black: #0b0b0b;
+  --color-white: #ffffff;
+  --color-bg-base: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root[data-theme="light"] {
+  --color-bg-base: var(--color-white);
+  --color-fg-base: var(--color-black);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root[data-theme="dark"] {
+  --color-bg-base: var(--color-black);
+  --color-fg-base: var(--color-white);
+}
+
+html {
+  background-color: var(--color-bg-base);
+  color: var(--color-fg-base);
+}
+
+@theme {
+  --color-primary: #0071e3;
+
+  --primary-color: #0071e3;
+  --ink: #1d1d1f;
+  --ink-2: #424248;
+  --ink-3: #6e6e73;
+  --ink-4: #86868b;
+  --line: #d2d2d7;
+  --accent: #0071e3;
+  --maxw: 1280px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --hero-content-height: 640px;
+  --yn-button-border-width: 1px;
+  --button-background: rgb(0, 113, 227);
+  --button-background-hover: #0076df;
+  --yn-button-text-color: #fff;
+
+  /* Spacing */
+  --section-padding-x: 1.5rem;
+}
+
+/* html[data-theme="light"] {
+}
+html[dark-theme="dark"] {
+} */
+
+@utility px-margin-x {
+  padding-inline: max(var(--section-padding-x), calc((100vw - 1920px) / 2));
+}
+
+@utility btn {
+  background: var(--primary-color);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 0;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  border-style: solid;
+  border-width: var(--yn-button-border-width);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  border-color: transparent;
+}
+
+.btn:hover {
+  background-color: var(--button-background-hover);
+  color: var(--yn-button-text-color);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--button-background);
+  border: 1.5px solid var(--button-background);
+}
+
+@layer utilities {
+  .text-body-xl {
+    font-size: 1.5rem;
+    line-height: 1.24;
+    letter-spacing: 0.02em;
+    font-weight: 300;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @media (min-width: 48rem) {
+    .text-body-xl {
+      font-size: 1.75rem;
+      line-height: 1.13;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .text-body-xl {
+      font-size: 2rem;
+    }
+  }
 }

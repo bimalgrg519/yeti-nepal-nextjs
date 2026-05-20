@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(npm install *)",
+      "Bash(npm --version)",
+      "Bash(cat /Users/bimal/.npm/_logs/2026-05-20T12_23_36_127Z-debug-0.log | grep -A5 \"error\")",
+      "Read(//Users/bimal/.npm/_logs/**)"
+    ]
+  }
+}
