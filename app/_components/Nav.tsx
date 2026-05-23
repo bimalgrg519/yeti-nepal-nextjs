@@ -24,14 +24,17 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed px-margin-x top-0 left-0 right-0 z-50 h-14 flex items-center transition-colors duration-300 ${scrolled ? "bg-white" : "bg-transparent"}`}
+      className={`fixed px-margin-x top-0 left-0 right-0 z-50 h-18 flex items-center transition-colors duration-300 ${scrolled ? "bg-white" : "bg-transparent"}`}
     >
       <nav className="relative max-w-[1920px] w-full flex justify-between items-center">
-        <Link href="#" className="text-2xl font-black tracking-wider">
-          <span className="brand-mark" aria-hidden="true" />
-          Yeti Nepal
+        <Link
+          href="#"
+          className="text-3xl font-bold tracking-tight uppercase text-white"
+        >
+          <span aria-hidden="true" />
+          Yeti &nbsp;Nepal
         </Link>
-        <ul className="hidden md:flex gap-6 uppercase text-sm font-medium">
+        <ul className="hidden md:flex gap-6 uppercase text-sm font-base text-white">
           <li>
             <Link href="#services">Services</Link>
           </li>
@@ -53,37 +56,49 @@ export default function Nav() {
         </ul>
         <div className="flex items-center gap-4">
           <button
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-            className={`w-8 h-8 flex items-center justify-center rounded-full border opacity-70 hover:opacity-100 transition-opacity ${theme === "dark" ? "border-white text-white" : "border-current"}`}
-          >
-            {theme === "dark" ? (
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" />
-              </svg>
-            ) : (
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7zm0-5a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM4.22 5.64a1 1 0 0 1 1.42-1.42l1.41 1.42a1 1 0 0 1-1.41 1.41L4.22 5.64zm12.73 12.73a1 1 0 0 1 1.41-1.41l1.42 1.41a1 1 0 0 1-1.42 1.42l-1.41-1.42zM3 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1zm16 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM4.22 18.36l1.41-1.41a1 1 0 0 1 1.42 1.41l-1.42 1.42a1 1 0 0 1-1.41-1.42zm12.73-12.73 1.41-1.42a1 1 0 0 1 1.42 1.42l-1.42 1.41a1 1 0 0 1-1.41-1.41z" />
-              </svg>
-            )}
-          </button>
-          <Link href="#services" className="btn btn-primary">
-            See what we do
-          </Link>
-          {/* <button
-            className="md:hidden"
+            className="md:hidden text-white"
             onClick={() => setOpen(true)}
             aria-label="Open menu"
+          >
+            <svg
+              width="36"
+              height="36"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="square"
+            >
+              <path d="M4 8h16M4 16h16" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      {open && (
+        <div
+          className="fixed inset-0 bg-black/50 z-[49]"
+          onClick={close}
+          aria-hidden="true"
+        />
+      )}
+
+      <div
+        className={`fixed inset-0 w-full bg-[var(--color-black)] z-[51] flex-col ${open ? "flex" : "hidden"}`}
+        aria-hidden={!open}
+      >
+        <div className="flex items-center justify-between px-margin-x h-18">
+          <Link
+            href="#"
+            className="text-3xl font-bold tracking-tight uppercase text-white"
+          >
+            <span aria-hidden="true" />
+            Yeti &nbsp;Nepal
+          </Link>
+          <button
+            className="flex items-center justify-center w-10 h-10 bg-white/[.12] text-white hover:bg-white/20"
+            onClick={close}
+            aria-label="Close menu"
           >
             <svg
               width="22"
@@ -92,49 +107,57 @@ export default function Nav() {
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
+              strokeLinecap="round"
             >
-              <path d="M4 7h16M4 12h16M4 17h16" />
+              <path d="M6 6l12 12M18 6L6 18" />
             </svg>
-          </button> */}
+          </button>
         </div>
-      </nav>
-
-      {/* <div className={`drawer${open ? " open" : ""}`}>
-        <button
-          className="drawer-close"
-          onClick={close}
-          aria-label="Close menu"
-        >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
+        <nav className="flex flex-col gap-8 px-margin-x pt-8 border-t border-white/[.15]">
+          <Link
+            href="#services"
+            onClick={close}
+            className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
           >
-            <path d="M6 6l12 12M18 6L6 18" />
-          </svg>
-        </button>
-        <Link href="#services" onClick={close}>
-          Services
-        </Link>
-        <Link href="#work" onClick={close}>
-          Work
-        </Link>
-        <Link href="#why" onClick={close}>
-          Approach
-        </Link>
-        <Link href="#voices" onClick={close}>
-          Voices
-        </Link>
-        <Link href="#about" onClick={close}>
-          Studio
-        </Link>
-        <Link href="#contact" onClick={close}>
-          Contact
-        </Link>
-      </div> */}
+            Services
+          </Link>
+          <Link
+            href="#work"
+            onClick={close}
+            className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
+          >
+            Work
+          </Link>
+          <Link
+            href="#why"
+            onClick={close}
+            className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
+          >
+            Approach
+          </Link>
+          <Link
+            href="#voices"
+            onClick={close}
+            className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
+          >
+            Voices
+          </Link>
+          <Link
+            href="#about"
+            onClick={close}
+            className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
+          >
+            Studio
+          </Link>
+          <Link
+            href="#contact"
+            onClick={close}
+            className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
+          >
+            Contact
+          </Link>
+        </nav>
+      </div>
     </header>
   );
 }

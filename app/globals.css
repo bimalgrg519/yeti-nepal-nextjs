@@ -4,6 +4,7 @@
   --color-black: #0b0b0b;
   --color-white: #ffffff;
   --color-bg-base: #ffffff;
+  --color-brand: #0071e3;
 }
 
 :root[data-theme="light"] {
@@ -22,9 +23,6 @@ html {
 }
 
 @theme {
-  --color-primary: #0071e3;
-
-  --primary-color: #0071e3;
   --ink: #1d1d1f;
   --ink-2: #424248;
   --ink-3: #6e6e73;
@@ -53,58 +51,76 @@ html[dark-theme="dark"] {
 }
 
 @utility btn {
-  background: var(--primary-color);
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0.4rem 0.8rem;
-  border-radius: 999px;
-  border: 0;
-  font-size: 14px;
-  font-weight: 400;
-  text-decoration: none;
+  border-radius: 0;
+  box-sizing: border-box;
   cursor: pointer;
-  transition:
-    background 0.2s,
-    color 0.2s;
-  border-style: solid;
-  border-width: var(--yn-button-border-width);
-  text-align: center;
+  border: 1px solid;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
   text-decoration: none;
-  white-space: nowrap;
-  border-color: transparent;
+  display: flex;
+  width: fit-content;
 }
 
-.btn:hover {
-  background-color: var(--button-background-hover);
-  color: var(--yn-button-text-color);
+@utility btn-primary {
+  @apply btn;
+  background: var(--color-brand);
+  color: var(--color-black);
+  border-color: var(--color-brand);
+
+  &:hover {
+    background-color: var(--color-white);
+    color: var(--color-brand);
+  }
 }
 
-.btn-outline {
+@utility btn-outline {
+  @apply btn;
   background: transparent;
-  color: var(--button-background);
-  border: 1.5px solid var(--button-background);
+  color: var(--color-white);
+  border-color: var(--color-white);
+
+  &:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
 }
 
 @layer utilities {
+  .text-page-heading-xl {
+    font-size: 3.3rem;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--color-white);
+    font-weight: 400;
+
+    @media (min-width: 40rem) {
+      font-size: 4rem;
+    }
+
+    @media (min-width: 48rem) {
+      font-size: 5rem;
+    }
+    @media (min-width: 64rem) {
+      font-size: 7rem;
+    }
+  }
   .text-body-xl {
     font-size: 1.5rem;
     line-height: 1.24;
     letter-spacing: 0.02em;
     font-weight: 300;
-  }
+    color: var(--color-white);
 
-  @media (min-width: 48rem) {
-    .text-body-xl {
+    @media (min-width: 48rem) {
       font-size: 1.75rem;
       line-height: 1.13;
     }
-  }
-
-  @media (min-width: 64rem) {
-    .text-body-xl {
+    @media (min-width: 64rem) {
       font-size: 2rem;
+      line-height: 1.1;
     }
   }
 }

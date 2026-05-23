@@ -36,14 +36,10 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/70 z-10" />
 
       <div className="flex-1 flex flex-col justify-center items-start px-margin-x relative z-10">
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full">
           <div>
-            <h1 className="reveal text-[60px] md:text-[96px] lg:text-[112px] leading-none">
-              Built in the Himalayas.
-            </h1>
-            <h1 className="reveal text-[60px] md:text-[96px] lg:text-[112px] leading-none">
-              Delivered globally.
-            </h1>
+            <h1 className="reveal text-page-heading-xl">From the himalayas</h1>
+            <h1 className="reveal text-page-heading-xl">to the world.</h1>
           </div>
           <p
             className="reveal w-fit pt-12 text-body-xl max-w-[36ch]"
@@ -53,18 +49,18 @@ export default function Hero() {
             scalable digital solutions.
           </p>
           <div
-            className="flex gap-2 flex-wrap reveal mt-6"
+            className="reveal flex gap-2 flex-col md:flex-row pt-12"
             style={{ transitionDelay: ".1s" }}
           >
             <Link
               href="#services"
-              className="btn btn-primary text-2xl px-6 py-3 font-light"
+              className="btn-primary text-xl sm:text-2xl px-6 py-3 font-light max-md:w-full"
             >
-              See what we do <span>›</span>
+              See what we do
             </Link>
             <Link
               href="#work"
-              className="btn btn-outline text-2xl px-6 py-3 font-light"
+              className="btn-outline text-xl sm:text-2xl px-6 py-3 font-light max-md:w-full"
             >
               Browse our work
             </Link>
