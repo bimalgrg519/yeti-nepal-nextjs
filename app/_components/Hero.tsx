@@ -17,7 +17,7 @@ const brands = [
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen overflow-hidden flex flex-col">
+    <section className="relative w-full h-[82vh] overflow-hidden flex flex-col">
       <MuxPlayer
         src="https://stream.mux.com/QegJZC2TTrWYc9ugth7eek1cgILqpv016nvVZFLJDRUk.m3u8?max_resolution=1080p&min_resolution=720p&redundant_streams=true"
         autoPlay

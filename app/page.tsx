@@ -1,5 +1,6 @@
 import Nav from "./_components/Nav";
 import Hero from "./_components/Hero";
+import Clients from "./_components/Clients";
 import Services from "./_components/Services";
 import Numbers from "./_components/Numbers";
 import WorkSlider from "./_components/WorkSlider";
@@ -18,6 +19,7 @@ export default function Page() {
       <Nav />
       <main>
         <Hero />
+        <Clients />
         {/* <Services />
         <Numbers />
         <WorkSlider />
