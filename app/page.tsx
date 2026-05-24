@@ -3,6 +3,7 @@ import Hero from "./_components/Hero";
 import Clients from "./_components/Clients";
 import Services from "./_components/Services";
 import Team from "./_components/Team";
+import Careers from "./_components/Careers";
 import Numbers from "./_components/Numbers";
 import WorkSlider from "./_components/WorkSlider";
 import Testimonials from "./_components/Testimonials";
@@ -23,6 +24,7 @@ export default function Page() {
         <Clients />
         <Services />
         <Team />
+        <Careers />
         {/* <Numbers />
         <WorkSlider />
         <Testimonials />
