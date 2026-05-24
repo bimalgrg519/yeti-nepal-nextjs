@@ -24,7 +24,7 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed px-margin-x top-0 left-0 right-0 z-50 h-18 flex items-center transition-colors duration-300 ${scrolled ? "bg-white" : "bg-transparent"}`}
+      className={`fixed px-margin-x top-0 left-0 right-0 z-50 h-18 flex items-center transition-colors duration-300 ${scrolled ? "bg-black" : "bg-transparent"}`}
     >
       <nav className="relative max-w-[1920px] w-full flex justify-between items-center">
         <Link

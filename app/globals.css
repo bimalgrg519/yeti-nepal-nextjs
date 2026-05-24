@@ -26,6 +26,7 @@ html {
 
 @theme {
   --color-brand: var(--brand1);
+  --color-blue-500: green;
 
   --ink: #1d1d1f;
   --ink-2: #424248;

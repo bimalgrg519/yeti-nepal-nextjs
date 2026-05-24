@@ -2,6 +2,7 @@ import Nav from "./_components/Nav";
 import Hero from "./_components/Hero";
 import Clients from "./_components/Clients";
 import Services from "./_components/Services";
+import Team from "./_components/Team";
 import Numbers from "./_components/Numbers";
 import WorkSlider from "./_components/WorkSlider";
 import Testimonials from "./_components/Testimonials";
@@ -21,6 +22,7 @@ export default function Page() {
         <Hero />
         <Clients />
         <Services />
+        <Team />
         {/* <Numbers />
         <WorkSlider />
         <Testimonials />
