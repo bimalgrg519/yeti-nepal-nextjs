@@ -28,7 +28,14 @@
       "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --screenshot=/tmp/tiny-view.png --window-size=1440,300 --hide-scrollbars --virtual-time-budget=5000 'http://localhost:3000/#services')",
       "Bash(sips -g pixelWidth -g pixelHeight /tmp/tiny-view.png)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:3000/services-preview\")",
-      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --screenshot=/tmp/services-preview.png --window-size=1440,900 --hide-scrollbars --virtual-time-budget=8000 http://localhost:3000/services-preview)"
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --screenshot=/tmp/services-preview.png --window-size=1440,900 --hide-scrollbars --virtual-time-budget=8000 http://localhost:3000/services-preview)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(curl -sf http://localhost:3000)",
+      "Bash(break)",
+      "Bash(chromium-cli --session footer-check)",
+      "Bash(node -e \"require\\('puppeteer'\\)\")",
+      "Bash(npm ls *)",
+      "Bash(npx playwright@1.60.0 screenshot http://localhost:3000 /tmp/footer-page.png --full-page)"
     ],
     "additionalDirectories": [
       "/tmp"

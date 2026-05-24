@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 import { applyAction, ApplyState } from "../actions/apply";
 
 const initialState: ApplyState = { status: "idle" };
@@ -23,6 +23,7 @@ export default function ApplyForm({
     initialState,
   );
   const formRef = useRef<HTMLFormElement>(null);
+  const [selectedRole, setSelectedRole] = useState(defaultRole);
 
   useEffect(() => {
     if (state.status === "success") {
@@ -30,7 +31,7 @@ export default function ApplyForm({
     }
   }, [state.status]);
 
-  const accentColor = roleColors[defaultRole] ?? "#b5ff4d";
+  const accentColor = roleColors[selectedRole] ?? "#b5ff4d";
 
   return (
     <form ref={formRef} action={formAction} className="flex flex-col gap-6">
@@ -42,6 +43,7 @@ export default function ApplyForm({
           <select
             name="role"
             defaultValue={defaultRole}
+            onChange={(e) => setSelectedRole(e.target.value)}
             className="w-full bg-white/[0.04] border border-white/10 text-white px-4 py-3 font-mono text-sm uppercase tracking-wide appearance-none cursor-pointer focus:outline-none focus:border-white/30 transition-colors"
           >
             {roles.map((role) => (

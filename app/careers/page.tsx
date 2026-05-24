@@ -51,16 +51,7 @@ export default async function CareersPage({
     openings.find((o) => o.id === role)?.id ?? openings[0].id;
 
   return (
-    <div className="min-h-screen bg-[#0b0b0b]">
-      <div className="px-margin-x py-8">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors duration-200 font-mono text-xs uppercase tracking-widest"
-        >
-          ← Back
-        </Link>
-      </div>
-
+    <div className="mt-40">
       <div className="px-margin-x pb-32">
         <div className="mb-20">
           <h1 className="text-6xl md:text-[9vw] font-black text-white leading-none tracking-tighter uppercase">

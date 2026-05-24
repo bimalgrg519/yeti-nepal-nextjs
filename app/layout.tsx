@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
+import Nav from "./_components/Nav";
+import Footer from "./_components/Footer";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -24,7 +26,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={manrope.variable} data-theme="dark">
-      <body>{children}</body>
+      <body>
+        <Nav />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

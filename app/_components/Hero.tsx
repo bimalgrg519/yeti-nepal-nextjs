@@ -53,16 +53,16 @@ export default function Hero() {
             style={{ transitionDelay: ".1s" }}
           >
             <Link
-              href="#services"
+              href="/#services"
               className="btn-primary text-xl sm:text-2xl px-6 py-3 font-light max-md:w-full"
             >
               See what we do
             </Link>
             <Link
-              href="#work"
+              href="/contact"
               className="btn-outline text-xl sm:text-2xl px-6 py-3 font-light max-md:w-full"
             >
-              Browse our work
+              Start a project
             </Link>
           </div>
         </div>

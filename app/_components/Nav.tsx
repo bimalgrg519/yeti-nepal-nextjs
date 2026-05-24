@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -20,6 +21,9 @@ export default function Nav() {
     setTheme(next);
   };
 
+  const pathname = usePathname();
+  const anchor = (hash: string) => (pathname === "/" ? hash : `/${hash}`);
+
   const close = () => setOpen(false);
 
   return (
@@ -28,7 +32,7 @@ export default function Nav() {
     >
       <nav className="relative max-w-[1920px] w-full flex justify-between items-center">
         <Link
-          href="#"
+          href="/"
           className="text-3xl font-bold tracking-tight uppercase text-white"
         >
           <span aria-hidden="true" />
@@ -36,22 +40,16 @@ export default function Nav() {
         </Link>
         <ul className="hidden md:flex gap-6 uppercase text-sm font-base text-white">
           <li>
-            <Link href="#services">Services</Link>
+            <Link href={anchor("#work")}>Work</Link>
           </li>
           <li>
-            <Link href="#work">Work</Link>
+            <Link href={anchor("#services")}>Services</Link>
           </li>
           <li>
-            <Link href="#why">Approach</Link>
+            <Link href="/careers">Career</Link>
           </li>
           <li>
-            <Link href="#voices">Voices</Link>
-          </li>
-          <li>
-            <Link href="#about">Studio</Link>
-          </li>
-          <li>
-            <Link href="#contact">Contact</Link>
+            <Link href="/contact">Contact</Link>
           </li>
         </ul>
         <div className="flex items-center gap-4 border border-white/40 px-3 py-1">
@@ -132,42 +130,42 @@ export default function Nav() {
         </div>
         <nav className="flex flex-col gap-8 px-margin-x pt-8 border-t border-white/[.15]">
           <Link
-            href="#services"
+            href={anchor("#services")}
             onClick={close}
             className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
           >
             Services
           </Link>
           <Link
-            href="#work"
+            href={anchor("#work")}
             onClick={close}
             className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
           >
             Work
           </Link>
           <Link
-            href="#why"
+            href={anchor("#why")}
             onClick={close}
             className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
           >
             Approach
           </Link>
           <Link
-            href="#voices"
+            href={anchor("#voices")}
             onClick={close}
             className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
           >
             Voices
           </Link>
           <Link
-            href="#about"
+            href={anchor("#about")}
             onClick={close}
             className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
           >
             Studio
           </Link>
           <Link
-            href="#contact"
+            href="/contact"
             onClick={close}
             className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
           >

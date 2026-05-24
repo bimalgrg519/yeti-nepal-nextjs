@@ -17,7 +17,7 @@ const clients = [
 
 export default function Clients() {
   return (
-    <section className="px-margin-x mt-6">
+    <section id="work" className="px-margin-x mt-6 scroll-mt-30">
       <p className="text-center font-light uppercase text-sm tracking-[0.1em] text-white/90 mb-4">
         Proud to Work With
       </p>
