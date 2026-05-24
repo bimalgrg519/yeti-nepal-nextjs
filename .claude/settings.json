@@ -8,7 +8,30 @@
       "Read(//Applications/**)",
       "Bash(npx playwright *)",
       "Bash(node -e ' *)",
-      "Bash(node /tmp/shot.mjs)"
+      "Bash(node /tmp/shot.mjs)",
+      "Bash(npm run dev -- --port 3456 > /tmp/nextjs-dev.log 2>&1 & *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3456)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --screenshot=/tmp/services-section.png --window-size=1440,900 --hide-scrollbars --virtual-time-budget=3000 http://localhost:3000)",
+      "Bash(echo \"exit: $?\")",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --screenshot=/tmp/services-scroll.png --window-size=1440,3000 --hide-scrollbars --virtual-time-budget=3000 http://localhost:3000)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --screenshot=/tmp/services-cards.png --window-size=1440,5000 --hide-scrollbars --virtual-time-budget=3000 'http://localhost:3000/#services')",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --screenshot=/tmp/svc-focused.png --window-size=1440,1000 --hide-scrollbars --virtual-time-budget=4000 --run-all-compositor-stages-before-draw http://localhost:3000)",
+      "Bash(sips -c 1000 1440 /tmp/svc-focused.png --out /tmp/svc-focused-crop.png)",
+      "Bash(sips --cropOffset 0 1250 --cropToHeightWidth 1150 1440 /tmp/fullpage.png --out /tmp/services-only.png)",
+      "Bash(sips --cropOffset 0 1600 --cropToHeightWidth 800 1440 /tmp/fullpage.png --out /tmp/services-v2.png)",
+      "Bash(node /tmp/capture.mjs)",
+      "Bash(sips --cropOffset 0 2500 --cropToHeightWidth 1500 1440 /tmp/tall.png --out /tmp/services-final.png)",
+      "Bash(sips --cropOffset 0 3000 --cropToHeightWidth 1000 1440 /tmp/tall.png --out /tmp/svc-crop-a.png)",
+      "Bash(sips --cropOffset 0 2800 --cropToHeightWidth 1200 1440 /tmp/tall.png --out /tmp/svc-crop-b.png)",
+      "Bash(sips --cropOffset 0 3480 --cropToHeightWidth 520 1440 /tmp/tall.png --out /tmp/svc-test.png)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --screenshot=/tmp/services-direct.png --window-size=1440,900 --hide-scrollbars --virtual-time-budget=6000 'http://localhost:3000/#services')",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --screenshot=/tmp/tiny-view.png --window-size=1440,300 --hide-scrollbars --virtual-time-budget=5000 'http://localhost:3000/#services')",
+      "Bash(sips -g pixelWidth -g pixelHeight /tmp/tiny-view.png)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:3000/services-preview\")",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --screenshot=/tmp/services-preview.png --window-size=1440,900 --hide-scrollbars --virtual-time-budget=8000 http://localhost:3000/services-preview)"
+    ],
+    "additionalDirectories": [
+      "/tmp"
     ]
   }
 }

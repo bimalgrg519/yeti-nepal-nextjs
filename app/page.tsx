@@ -20,8 +20,8 @@ export default function Page() {
       <main>
         <Hero />
         <Clients />
-        {/* <Services />
-        <Numbers />
+        <Services />
+        {/* <Numbers />
         <WorkSlider />
         <Testimonials />
         <Approach />
