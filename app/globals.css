@@ -7,6 +7,9 @@
   --color-white: #ffffff;
   --color-bg-base: #ffffff;
   --brand1: var(--blue);
+
+  /* Spacing */
+  --section-padding-x: 1.5rem;
 }
 
 :root[data-theme="light"] {
@@ -26,24 +29,6 @@ html {
 
 @theme {
   --color-brand: var(--brand1);
-  --color-blue-500: green;
-
-  --ink: #1d1d1f;
-  --ink-2: #424248;
-  --ink-3: #6e6e73;
-  --ink-4: #86868b;
-  --line: #d2d2d7;
-  --accent: #0071e3;
-  --maxw: 1280px;
-  --gutter: clamp(16px, 4vw, 48px);
-  --hero-content-height: 640px;
-  --yn-button-border-width: 1px;
-  --button-background: rgb(0, 113, 227);
-  --button-background-hover: #0076df;
-  --yn-button-text-color: #fff;
-
-  /* Spacing */
-  --section-padding-x: 1.5rem;
 }
 
 /* html[data-theme="light"] {
@@ -127,14 +112,5 @@ html[dark-theme="dark"] {
       font-size: 2rem;
       line-height: 1.1;
     }
-  }
-}
-
-@keyframes ticker {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
   }
 }

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Logo from "./Logo";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -31,12 +32,8 @@ export default function Nav() {
       className={`fixed px-margin-x top-0 left-0 right-0 z-50 h-18 flex items-center transition-colors duration-300 ${scrolled ? "bg-black" : "bg-transparent"}`}
     >
       <nav className="relative max-w-[1920px] w-full flex justify-between items-center">
-        <Link
-          href="/"
-          className="text-3xl font-bold tracking-tight uppercase text-white"
-        >
-          <span aria-hidden="true" />
-          Yeti &nbsp;Nepal
+        <Link href="/">
+          <Logo className="text-white" />
         </Link>
         <ul className="hidden md:flex gap-6 uppercase text-sm font-base text-white">
           <li>
@@ -52,41 +49,45 @@ export default function Nav() {
             <Link href="/contact">Contact</Link>
           </li>
         </ul>
-        <div className="flex items-center gap-4 border border-white/40 px-3 py-1">
-          <a
-            href="https://www.youtube.com/@theyetinepal/playlists"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube Playlists"
-            className="text-white hover:opacity-75 transition-opacity"
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
+        <div className="flex gap-2">
+          <div className="flex items-center gap-4 border border-white/40 px-2 md:px-3 py-2">
+            <a
+              href="https://www.youtube.com/@theyetinepal/playlists"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube Playlists"
+              className="text-white hover:opacity-75 transition-opacity"
             >
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-            </svg>
-          </a>
-          <button
-            className="md:hidden text-white"
-            onClick={() => setOpen(true)}
-            aria-label="Open menu"
-          >
-            <svg
-              width="36"
-              height="36"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="square"
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+          </div>
+          <div className="flex md:hidden items-center gap-4 border border-white/40 px-1 py-px">
+            <button
+              className="text-white"
+              onClick={() => setOpen(true)}
+              aria-label="Open menu"
             >
-              <path d="M4 8h16M4 16h16" />
-            </svg>
-          </button>
+              <svg
+                width="36"
+                height="36"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="square"
+              >
+                <path d="M4 8h16M4 16h16" />
+              </svg>
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -103,12 +104,8 @@ export default function Nav() {
         aria-hidden={!open}
       >
         <div className="flex items-center justify-between px-margin-x h-18">
-          <Link
-            href="#"
-            className="text-3xl font-bold tracking-tight uppercase text-white"
-          >
-            <span aria-hidden="true" />
-            Yeti &nbsp;Nepal
+          <Link href="/" onClick={close}>
+            <Logo className="text-white" />
           </Link>
           <button
             className="flex items-center justify-center w-10 h-10 bg-white/[.12] text-white hover:bg-white/20"

@@ -1,6 +1,5 @@
 import { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
+import { ClientGrid } from "../_components/Clients";
 import ContactForm from "./_ContactForm";
 
 export const metadata: Metadata = {
@@ -8,21 +7,6 @@ export const metadata: Metadata = {
   description:
     "Get in touch with Yeti Nepal. Tell us about your project and let's build something together.",
 };
-
-const clients = [
-  { name: "Big Hound", logo: "/clients/big-hound.png" },
-  { name: "Bucketeer", logo: "/clients/bucketeer.png" },
-  { name: "Custom Maps", logo: "/clients/custom-maps.png" },
-  { name: "Fightback", logo: "/clients/fightback.png" },
-  { name: "Homeloan Quest", logo: "/clients/homeloan-quest.png" },
-  { name: "Local Dentures", logo: "/clients/local-dentures.webp" },
-  { name: "Mero Poster", logo: "/clients/mero-poster.png" },
-  { name: "Mister Wallpaper", logo: "/clients/mister-wallpaper.png" },
-  { name: "Pine Crest", logo: "/clients/pine-crest.png" },
-  { name: "Reyas Care", logo: "/clients/reyas-care.png" },
-  { name: "Storyworld", logo: "/clients/storyworld.png" },
-  { name: "Webfriend", logo: "/clients/webfriend.png" },
-];
 
 const listItems = [
   { label: "Tell us about your work", sub: "What are you building?" },
@@ -85,30 +69,7 @@ export default function ContactPage() {
               <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-white/60 mb-4">
                 Trusted by
               </p>
-              <div
-                style={{
-                  backgroundImage:
-                    'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nOCcgaGVpZ2h0PSc4JyB2aWV3Qm94PScwIDAgOCA4JyBvcGFjaXR5PScwLjYnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PGNpcmNsZSBjeD0nMC43NScgY3k9JzAuNzUnIHI9JzAuNzUnIGZpbGw9JyNmZmZmZmYnLz48L3N2Zz4=")',
-                  backgroundRepeat: "repeat",
-                }}
-              >
-                <ul className="grid grid-cols-3 gap-[6.5px] p-3">
-                  {clients.map((client) => (
-                    <li
-                      key={client.name}
-                      className="flex items-center justify-center bg-[#0b0b0b] h-16 py-4"
-                    >
-                      <Image
-                        src={client.logo}
-                        alt={client.name}
-                        width={100}
-                        height={40}
-                        className="object-contain brightness-0 invert opacity-60 hover:opacity-90 transition-opacity"
-                      />
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ClientGrid />
             </div>
           </div>
 

@@ -15,36 +15,42 @@ const clients = [
   { name: "Webfriend", logo: "/clients/webfriend.png" },
 ];
 
+export function ClientGrid() {
+  return (
+    <div
+      className="border border-brand/60"
+      style={{
+        backgroundImage: `linear-gradient(45deg, var(--color-brand) 1px, transparent 2px)`,
+        backgroundSize: "6px 6px",
+      }}
+    >
+      <ul className="grid grid-cols-[repeat(auto-fill,minmax(190px,1fr))] gap-3.5 p-4">
+        {clients.map((client) => (
+          <li
+            key={client.name}
+            className="flex items-center justify-center bg-black h-20 py-8"
+          >
+            <Image
+              src={client.logo}
+              alt={client.name}
+              width={120}
+              height={48}
+              className="object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function Clients() {
   return (
     <section id="work" className="px-margin-x mt-6 scroll-mt-30">
-      <p className="text-center font-light uppercase text-sm tracking-[0.1em] text-white/90 mb-4">
+      <p className="text-center font-light uppercase text-sm tracking-widest text-white/90 mb-4">
         Proud to Work With
       </p>
-      <div
-        style={{
-          backgroundImage:
-            'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nOCcgaGVpZ2h0PSc4JyB2aWV3Qm94PScwIDAgOCA4JyBvcGFjaXR5PScwLjYnIGZpbGw9J25vbmUnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PGNpcmNsZSBjeD0nMC43NScgY3k9JzAuNzUnIHI9JzAuNzUnIGZpbGw9JyNmZmZmZmYnLz48L3N2Zz4=")',
-          backgroundRepeat: "repeat",
-        }}
-      >
-        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-[6.5px] p-4">
-          {clients.map((client) => (
-            <li
-              key={client.name}
-              className="flex items-center justify-center bg-black h-[5rem] py-8"
-            >
-              <Image
-                src={client.logo}
-                alt={client.name}
-                width={120}
-                height={48}
-                className="object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ClientGrid />
     </section>
   );
 }

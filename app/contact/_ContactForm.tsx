@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useEffect, useRef } from "react";
-import { contactAction, ContactState } from "../actions/contact";
+import { contactAction, ContactState } from "../../actions/contact";
 
 const initialState: ContactState = { status: "idle" };
 
@@ -15,7 +15,10 @@ const sourceOptions = [
 ];
 
 export default function ContactForm() {
-  const [state, formAction, pending] = useActionState(contactAction, initialState);
+  const [state, formAction, pending] = useActionState(
+    contactAction,
+    initialState,
+  );
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {

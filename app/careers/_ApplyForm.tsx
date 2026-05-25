@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useEffect, useRef, useState } from "react";
-import { applyAction, ApplyState } from "../actions/apply";
+import { applyAction, ApplyState } from "../../actions/apply";
 
 const initialState: ApplyState = { status: "idle" };
 

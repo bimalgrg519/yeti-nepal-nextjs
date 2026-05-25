@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LogoMark } from "./Logo";
 
 const studio = ["About", "Work", "Careers", "Press"];
 const services = ["Website", "Mobile Apps", "SEO"];
@@ -27,7 +28,7 @@ export default function Footer() {
           lineHeight: 1,
           letterSpacing: "-0.04em",
           color: "transparent",
-          WebkitTextStroke: "1px rgba(255,255,255,0.05)",
+          WebkitTextStroke: "1px rgba(255,255,255,0.1)",
           userSelect: "none",
           pointerEvents: "none",
           zIndex: 0,
@@ -150,7 +151,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ── Divider with decorative number ── */}
         <div
           style={{
             display: "flex",
@@ -158,6 +158,7 @@ export default function Footer() {
             gap: "1.5rem",
             padding: "0 clamp(1.5rem, 5vw, 5rem)",
             marginBottom: "2.5rem",
+            marginTop: "2rem",
           }}
         >
           <div
@@ -346,20 +347,28 @@ export default function Footer() {
               gap: "2.5rem",
             }}
           >
-            <span
-              className="text-white mt-10"
-              style={{
-                fontFamily: "var(--font-geist-sans), sans-serif",
-                fontSize: "clamp(2.5rem, 8vw, 5rem)",
-                fontWeight: 700,
-                letterSpacing: "-0.03em",
-                textTransform: "uppercase",
-                userSelect: "none",
-                lineHeight: 1,
-              }}
+            <div
+              className="text-white mt-10 flex items-center gap-4"
+              style={{ userSelect: "none" }}
             >
-              Yeti Nepal
-            </span>
+              <LogoMark
+                style={{
+                  height: "clamp(2rem, 6vw, 4rem)",
+                  width: "auto",
+                }}
+              />
+              <span
+                style={{
+                  fontSize: "clamp(2.5rem, 8vw, 5rem)",
+                  fontWeight: 700,
+                  letterSpacing: "-0.03em",
+                  textTransform: "uppercase",
+                  lineHeight: 1,
+                }}
+              >
+                Yeti Nepal
+              </span>
+            </div>
           </div>
           <span
             style={{
