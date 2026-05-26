@@ -52,7 +52,7 @@ export default function Careers() {
     <section className="px-margin-x overflow-hidden bg-[#0b0b0b] py-12 md:py-24">
       <div className="max-w-[1920px]">
         <div className="relative mb-20">
-          <h2 className="text-6xl leading-none font-black tracking-tighter text-white uppercase md:text-[10vw]">
+          <h2 className="text-[5rem] leading-none font-black tracking-tighter text-white uppercase min-[915px]:text-[6rem] min-[1350px]:text-[9rem] min-[1615px]:text-[11rem]">
             Join the{" "}
             <span
               className="inline-block"

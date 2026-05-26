@@ -19,21 +19,32 @@ export default function Footer() {
         YN
       </span>
 
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-[40%] left-[30%] h-[50vw] w-[50vw] rounded-full"
-      />
+      <div aria-hidden="true" />
 
       <div className="relative z-[1] flex flex-1 flex-col">
         <div className="px-margin-x flex flex-1 flex-col bg-lime-600 py-32">
           <div className="flex w-full flex-col items-center gap-3 min-[1256px]:flex-row md:items-center md:justify-between">
             <div>
-              <Link href="/contact" className="flex w-fit items-center gap-2">
+              <Link href="/contact" className="flex w-fit items-end gap-2">
                 <h2 className="md:[text-8rem] text-[5rem] leading-[0.88] font-light tracking-[-0.03em] text-white lg:text-[9.5rem]">
                   Let&apos;s talk
                 </h2>
-                <span className="footer-arrow rotate-45 self-end text-[4rem] leading-none text-black md:text-[5rem] lg:text-[6rem]">
-                  &#11105;
+                <span className="items-center text-black">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="120"
+                    height="120"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"
+                  >
+                    <path d="M7 7h10v10" />
+                    <path d="M7 17 17 7" />
+                  </svg>
                 </span>
               </Link>
               <div className="mt-[clamp(2rem,4vh,3.5rem)] flex flex-wrap items-baseline gap-[clamp(1.5rem,4vw,4rem)]">
@@ -59,14 +70,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 mb-10 flex items-center gap-6 px-[clamp(1.5rem,5vw,5rem)]">
+        <div className="px-margin-x mt-8 mb-10 flex items-center gap-6 px-[clamp(1.5rem,5vw,5rem)]">
           <div className="h-px flex-1 bg-[linear-gradient(90deg,rgba(255,255,255,0.08)_0%,rgba(0,113,227,0.25)_50%,rgba(255,255,255,0.03)_100%)]" />
           <span className="shrink-0 text-[0.6rem] tracking-[0.2em] text-white/80 uppercase">
             PKR
           </span>
         </div>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(130px,1fr))] gap-x-12 gap-y-8 px-[clamp(1.5rem,5vw,5rem)] pb-[clamp(3rem,6vh,4.5rem)]">
+        <div className="px-margin-x grid grid-cols-[repeat(auto-fit,minmax(130px,1fr))] gap-x-12 gap-y-8 px-[clamp(1.5rem,5vw,5rem)] pb-[clamp(3rem,6vh,4.5rem)]">
           <div>
             <p className="mb-4 text-[0.6rem] tracking-[0.2em] text-white/40 uppercase">
               Studio
@@ -140,7 +151,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-end justify-between gap-2 border-t border-white/[0.05] px-[clamp(1.5rem,5vw,5rem)] pt-5 pb-6">
+        <div className="px-margin-x flex flex-wrap items-end justify-between gap-2 border-t border-white/[0.05] px-[clamp(1.5rem,5vw,5rem)] pt-5 pb-6">
           <span className="text-[0.65rem] tracking-[0.12em] text-white/40 uppercase">
             © 2026 Yeti Nepal
           </span>
