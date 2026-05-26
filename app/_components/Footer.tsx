@@ -29,15 +29,15 @@ export default function Footer() {
           <div className="flex w-full flex-col items-center gap-3 min-[1256px]:flex-row md:items-center md:justify-between">
             <div>
               <Link href="/contact" className="flex w-fit items-center gap-2">
-                <h2 className="md:[text-8rem] text-[6rem] leading-[0.88] font-light tracking-[-0.03em] text-white lg:text-[9.5rem]">
+                <h2 className="md:[text-8rem] text-[5rem] leading-[0.88] font-light tracking-[-0.03em] text-white lg:text-[9.5rem]">
                   Let&apos;s talk
                 </h2>
-                <span className="footer-arrow mt-auto self-end text-[4rem] leading-none text-black md:text-[5rem] lg:text-[6rem]">
-                  ↗
+                <span className="footer-arrow rotate-45 self-end text-[4rem] leading-none text-black md:text-[5rem] lg:text-[6rem]">
+                  &#11105;
                 </span>
               </Link>
               <div className="mt-[clamp(2rem,4vh,3.5rem)] flex flex-wrap items-baseline gap-[clamp(1.5rem,4vw,4rem)]">
-                <span className="text-base tracking-[0.1em] uppercase">
+                <span className="text-base font-light tracking-[0.1em] uppercase max-sm:max-w-[23ch]">
                   Lamachour, Pokhara · +977 9700886505
                 </span>
               </div>
@@ -145,11 +145,14 @@ export default function Footer() {
             © 2026 Yeti Nepal
           </span>
           <div className="flex flex-col items-center justify-center gap-10 px-[clamp(1.5rem,5vw,5rem)] pt-[10rem] pb-8">
-            <div className="mt-10 flex items-center gap-4 text-white select-none">
+            <Link
+              href="/"
+              className="mt-10 flex items-center gap-4 text-white select-none"
+            >
               <span className="text-[4rem] leading-none font-bold tracking-[-0.03em] uppercase">
                 Yeti Nepal
               </span>
-            </div>
+            </Link>
           </div>
           <span className="text-[0.65rem] tracking-[0.12em] text-white/40 uppercase">
             From the himalayas to the world.

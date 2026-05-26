@@ -21,7 +21,7 @@ export default function ContactPage() {
     <div className="mt-40">
       <div className="px-margin-x pb-24">
         <div className="mb-16 flex items-center gap-8 sm:flex-row">
-          <h1 className="bg-amber-700 text-6xl font-black tracking-tighter text-white uppercase md:text-[9vw]">
+          <h1 className="bg-amber-700 pr-2 text-6xl font-black tracking-tighter text-white uppercase md:text-[9vw]">
             Let&apos;s{" "}
             <span
               style={{

@@ -9,7 +9,7 @@ import Logo from "./Logo";
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  // const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
@@ -17,16 +17,23 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const toggleTheme = () => {
-    const next = theme === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", next);
-    setTheme(next);
-  };
+  // const toggleTheme = () => {
+  //   const next = theme === "dark" ? "light" : "dark";
+  //   document.documentElement.setAttribute("data-theme", next);
+  //   setTheme(next);
+  // };
 
   const pathname = usePathname();
   const anchor = (hash: string) => (pathname === "/" ? hash : `/${hash}`);
 
   const close = () => setOpen(false);
+
+  const links = [
+    { label: "Work", href: anchor("#work") },
+    { label: "Services", href: anchor("#services") },
+    { label: "Career", href: "/careers" },
+    { label: "Contact", href: "/contact" },
+  ];
 
   return (
     <header
@@ -37,18 +44,11 @@ export default function Nav() {
           <Logo className="text-white" />
         </Link>
         <ul className="font-base hidden gap-6 text-sm text-white uppercase md:flex">
-          <li>
-            <Link href={anchor("#work")}>Work</Link>
-          </li>
-          <li>
-            <Link href={anchor("#services")}>Services</Link>
-          </li>
-          <li>
-            <Link href="/careers">Career</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact</Link>
-          </li>
+          {links.map(({ label, href }) => (
+            <li key={label}>
+              <Link href={href}>{label}</Link>
+            </li>
+          ))}
         </ul>
         <div className="flex gap-2">
           <div className="flex items-center gap-4 border border-white/40 px-2 py-2 md:px-3">
@@ -127,48 +127,16 @@ export default function Nav() {
           </button>
         </div>
         <nav className="px-margin-x flex flex-col gap-8 border-t border-white/[.15] pt-8">
-          <Link
-            href={anchor("#services")}
-            onClick={close}
-            className="text-xl tracking-[0.05em] text-white uppercase opacity-80 hover:opacity-100"
-          >
-            Services
-          </Link>
-          <Link
-            href={anchor("#work")}
-            onClick={close}
-            className="text-xl tracking-[0.05em] text-white uppercase opacity-80 hover:opacity-100"
-          >
-            Work
-          </Link>
-          <Link
-            href={anchor("#why")}
-            onClick={close}
-            className="text-xl tracking-[0.05em] text-white uppercase opacity-80 hover:opacity-100"
-          >
-            Approach
-          </Link>
-          <Link
-            href={anchor("#voices")}
-            onClick={close}
-            className="text-xl tracking-[0.05em] text-white uppercase opacity-80 hover:opacity-100"
-          >
-            Voices
-          </Link>
-          <Link
-            href={anchor("#about")}
-            onClick={close}
-            className="text-xl tracking-[0.05em] text-white uppercase opacity-80 hover:opacity-100"
-          >
-            Studio
-          </Link>
-          <Link
-            href="/contact"
-            onClick={close}
-            className="text-xl tracking-[0.05em] text-white uppercase opacity-80 hover:opacity-100"
-          >
-            Contact
-          </Link>
+          {links.map(({ label, href }) => (
+            <Link
+              key={label}
+              href={href}
+              onClick={close}
+              className="text-xl tracking-wider text-white uppercase opacity-80 hover:opacity-100"
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
