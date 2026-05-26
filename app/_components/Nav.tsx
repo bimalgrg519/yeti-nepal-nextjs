@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+
 import Logo from "./Logo";
 
 export default function Nav() {
@@ -29,13 +30,13 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed px-margin-x top-0 left-0 right-0 z-50 h-18 flex items-center transition-colors duration-300 ${scrolled ? "bg-black" : "bg-transparent"}`}
+      className={`px-margin-x fixed top-0 right-0 left-0 z-50 flex h-18 items-center transition-colors duration-300 ${scrolled ? "bg-black" : "bg-transparent"}`}
     >
-      <nav className="relative max-w-[1920px] w-full flex justify-between items-center">
+      <nav className="relative flex w-full max-w-[1920px] items-center justify-between">
         <Link href="/">
           <Logo className="text-white" />
         </Link>
-        <ul className="hidden md:flex gap-6 uppercase text-sm font-base text-white">
+        <ul className="font-base hidden gap-6 text-sm text-white uppercase md:flex">
           <li>
             <Link href={anchor("#work")}>Work</Link>
           </li>
@@ -50,13 +51,13 @@ export default function Nav() {
           </li>
         </ul>
         <div className="flex gap-2">
-          <div className="flex items-center gap-4 border border-white/40 px-2 md:px-3 py-2">
+          <div className="flex items-center gap-4 border border-white/40 px-2 py-2 md:px-3">
             <a
               href="https://www.youtube.com/@theyetinepal/playlists"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube Playlists"
-              className="text-white hover:opacity-75 transition-opacity"
+              className="text-white transition-opacity hover:opacity-75"
             >
               <svg
                 width="28"
@@ -69,7 +70,7 @@ export default function Nav() {
               </svg>
             </a>
           </div>
-          <div className="flex md:hidden items-center gap-4 border border-white/40 px-1 py-px">
+          <div className="flex items-center gap-4 border border-white/40 px-1 py-px md:hidden">
             <button
               className="text-white"
               onClick={() => setOpen(true)}
@@ -93,22 +94,22 @@ export default function Nav() {
 
       {open && (
         <div
-          className="fixed inset-0 bg-black/50 z-[49]"
+          className="fixed inset-0 z-[49] bg-black/50"
           onClick={close}
           aria-hidden="true"
         />
       )}
 
       <div
-        className={`fixed inset-0 w-full bg-[var(--color-black)] z-[51] flex-col ${open ? "flex" : "hidden"}`}
+        className={`fixed inset-0 z-[51] w-full flex-col bg-[var(--color-black)] ${open ? "flex" : "hidden"}`}
         aria-hidden={!open}
       >
-        <div className="flex items-center justify-between px-margin-x h-18">
+        <div className="px-margin-x flex h-18 items-center justify-between">
           <Link href="/" onClick={close}>
             <Logo className="text-white" />
           </Link>
           <button
-            className="flex items-center justify-center w-10 h-10 bg-white/[.12] text-white hover:bg-white/20"
+            className="flex h-10 w-10 items-center justify-center bg-white/[.12] text-white hover:bg-white/20"
             onClick={close}
             aria-label="Close menu"
           >
@@ -125,46 +126,46 @@ export default function Nav() {
             </svg>
           </button>
         </div>
-        <nav className="flex flex-col gap-8 px-margin-x pt-8 border-t border-white/[.15]">
+        <nav className="px-margin-x flex flex-col gap-8 border-t border-white/[.15] pt-8">
           <Link
             href={anchor("#services")}
             onClick={close}
-            className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
+            className="text-xl tracking-[0.05em] text-white uppercase opacity-80 hover:opacity-100"
           >
             Services
           </Link>
           <Link
             href={anchor("#work")}
             onClick={close}
-            className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
+            className="text-xl tracking-[0.05em] text-white uppercase opacity-80 hover:opacity-100"
           >
             Work
           </Link>
           <Link
             href={anchor("#why")}
             onClick={close}
-            className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
+            className="text-xl tracking-[0.05em] text-white uppercase opacity-80 hover:opacity-100"
           >
             Approach
           </Link>
           <Link
             href={anchor("#voices")}
             onClick={close}
-            className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
+            className="text-xl tracking-[0.05em] text-white uppercase opacity-80 hover:opacity-100"
           >
             Voices
           </Link>
           <Link
             href={anchor("#about")}
             onClick={close}
-            className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
+            className="text-xl tracking-[0.05em] text-white uppercase opacity-80 hover:opacity-100"
           >
             Studio
           </Link>
           <Link
             href="/contact"
             onClick={close}
-            className="text-white text-xl uppercase tracking-[0.05em] opacity-80 hover:opacity-100"
+            className="text-xl tracking-[0.05em] text-white uppercase opacity-80 hover:opacity-100"
           >
             Contact
           </Link>

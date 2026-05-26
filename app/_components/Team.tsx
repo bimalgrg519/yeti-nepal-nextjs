@@ -39,37 +39,37 @@ const team = [
 
 export default function Team() {
   return (
-    <section className="px-margin-x py-24 bg-[#0b0b0b]">
+    <section className="px-margin-x bg-[#0b0b0b] py-12 md:py-24">
       <div className="max-w-[1920px]">
         <div className="mb-16">
-          <h2 className="text-4xl md:text-7xl font-light text-white leading-none tracking-tight">
+          <h2 className="text-5xl leading-none font-light tracking-tight text-white md:text-7xl">
             Meet our amazing community.
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-10 gap-px bg-white/[0.08] p-px">
+        <div className="grid grid-cols-2 gap-px bg-white/[0.08] p-px min-[600px]:grid-cols-3 min-[900px]:grid-cols-5 min-[1100px]:grid-cols-6 min-[1300px]:grid-cols-8 min-[1500px]:grid-cols-10">
           {team.map((member) => (
             <div
               key={member.name}
-              className="relative aspect-square overflow-hidden group cursor-pointer border-b-2"
+              className="group relative aspect-square cursor-pointer overflow-hidden border-b-2"
             >
               <Image
                 src={member.image}
                 alt={member.name}
                 fill
-                className="object-cover object-top transition-all duration-300 scale-105 group-hover:scale-100"
+                className="scale-105 object-cover object-top transition-all duration-300 group-hover:scale-100"
                 sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
               />
 
-              <div className="absolute inset-0 bg-black/55 transition-opacity duration-500 group-hover:opacity-0" />
+              <div className="absolute inset-0 bg-black/20 transition-opacity duration-500 group-hover:opacity-0 sm:bg-black/70" />
 
-              <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-              <div className="absolute bottom-1 right-1 flex flex-col text-right">
-                <span className="text-white text-lg uppercase font-bold tracking-wide leading-5">
+              <div className="absolute right-1 bottom-1 flex flex-col text-right">
+                <span className="text-lg leading-5 font-bold tracking-wide text-white uppercase">
                   {member.name}
                 </span>
-                <span className="text-white/80 text-[10px] font-normal uppercase">
+                <span className="text-[10px] font-normal text-white/80 uppercase">
                   {member.designation}
                 </span>
               </div>

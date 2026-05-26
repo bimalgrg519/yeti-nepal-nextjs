@@ -35,10 +35,12 @@
       "Bash(chromium-cli --session footer-check)",
       "Bash(node -e \"require\\('puppeteer'\\)\")",
       "Bash(npm ls *)",
-      "Bash(npx playwright@1.60.0 screenshot http://localhost:3000 /tmp/footer-page.png --full-page)"
+      "Bash(npx playwright@1.60.0 screenshot http://localhost:3000 /tmp/footer-page.png --full-page)",
+      "Bash(lsof -ti:3000)",
+      "Bash(chromium-cli screenshot *)",
+      "Bash(open -a \"Google Chrome\" \"http://localhost:3000\")",
+      "Bash(screencapture -x /tmp/team-section.png)"
     ],
-    "additionalDirectories": [
-      "/tmp"
-    ]
+    "additionalDirectories": ["/tmp"]
   }
 }

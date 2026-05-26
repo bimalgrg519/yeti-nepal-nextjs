@@ -1,6 +1,6 @@
 import { Metadata } from "next";
+
 import ApplyForm from "./_ApplyForm";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Careers — Yeti Nepal",
@@ -54,7 +54,7 @@ export default async function CareersPage({
     <div className="mt-40">
       <div className="px-margin-x pb-32">
         <div className="mb-20">
-          <h1 className="text-6xl md:text-[9vw] font-black text-white leading-none tracking-tighter uppercase">
+          <h1 className="text-6xl leading-none font-black tracking-tighter text-white uppercase md:text-[9vw]">
             Work with{" "}
             <span
               style={{
@@ -67,42 +67,41 @@ export default async function CareersPage({
           </h1>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
-          {/* Openings list */}
+        <div className="flex flex-col-reverse gap-20 lg:grid lg:grid-cols-2 lg:gap-32">
           <div className="flex flex-col gap-0">
             {openings.map((job) => (
               <div
                 key={job.id}
                 className="border-t border-white/10 py-8 last:border-b"
               >
-                <div className="flex items-start gap-4 mb-3">
+                <div className="mb-3 flex items-start gap-4">
                   <span
-                    className="font-mono text-xs mt-1"
+                    className="mt-1 font-mono text-xs"
                     style={{ color: job.color }}
                   >
                     {job.label}
                   </span>
                   <div>
-                    <div className="flex items-baseline gap-3 mb-1">
-                      <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter leading-none">
+                    <div className="mb-1 flex items-baseline gap-3">
+                      <h2 className="text-2xl leading-none font-black tracking-tighter text-white uppercase md:text-3xl">
                         {job.id}
                       </h2>
                       <span
-                        className="font-mono text-[9px] font-bold tracking-widest uppercase px-2 py-0.5"
+                        className="px-2 py-0.5 font-mono text-[9px] font-bold tracking-widest uppercase"
                         style={{ background: job.color, color: "#0b0b0b" }}
                       >
                         {job.weirdTitle}
                       </span>
                     </div>
-                    <p className="text-white/50 text-sm mb-3">{job.tagline}</p>
-                    <p className="text-white/40 text-sm leading-relaxed mb-4">
+                    <p className="mb-3 text-sm text-white/50">{job.tagline}</p>
+                    <p className="mb-4 text-sm leading-relaxed text-white/40">
                       {job.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {job.perks.map((perk) => (
                         <span
                           key={perk}
-                          className="font-mono text-[10px] uppercase tracking-widest px-2.5 py-1 border"
+                          className="border px-2.5 py-1 font-mono text-[10px] tracking-widest uppercase"
                           style={{
                             borderColor: job.color + "44",
                             color: job.color,
@@ -118,7 +117,6 @@ export default async function CareersPage({
             ))}
           </div>
 
-          {/* Application form */}
           <div>
             <div className="sticky top-8">
               <ApplyForm

@@ -1,215 +1,84 @@
 import Link from "next/link";
-import { LogoMark } from "./Logo";
 
-const studio = ["About", "Work", "Careers", "Press"];
+const studio = [
+  { label: "Work", href: "/#work" },
+  { label: "Services", href: "/#services" },
+  { label: "Careers", href: "/careers" },
+  { label: "Contact", href: "/contact" },
+];
 const services = ["Website", "Mobile Apps", "SEO"];
 
 export default function Footer() {
   return (
-    <footer
-      style={{
-        minHeight: "100vh",
-        background: "#070707",
-        color: "white",
-        display: "flex",
-        flexDirection: "column",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
+    <footer className="relative flex flex-col overflow-hidden bg-[#070707] pb-12 text-white">
       <span
         aria-hidden="true"
-        style={{
-          position: "absolute",
-          right: "-0.05em",
-          bottom: "5rem",
-          fontSize: "clamp(12rem, 38vw, 52rem)",
-          fontWeight: 900,
-          lineHeight: 1,
-          letterSpacing: "-0.04em",
-          color: "transparent",
-          WebkitTextStroke: "1px rgba(255,255,255,0.1)",
-          userSelect: "none",
-          pointerEvents: "none",
-          zIndex: 0,
-        }}
+        className="pointer-events-none absolute right-[-0.05em] bottom-20 z-0 text-[12rem] leading-none font-black tracking-[-0.04em] text-transparent select-none md:text-[28rem] xl:text-[52rem]"
+        style={{ WebkitTextStroke: "1px rgba(255,255,255,0.1)" }}
       >
         YN
       </span>
 
       <div
         aria-hidden="true"
-        style={{
-          position: "absolute",
-          left: "30%",
-          top: "40%",
-          width: "50vw",
-          height: "50vw",
-          borderRadius: "50%",
-          pointerEvents: "none",
-          zIndex: 0,
-        }}
+        className="pointer-events-none absolute top-[40%] left-[30%] h-[50vw] w-[50vw] rounded-full"
       />
 
-      <div
-        style={{
-          position: "relative",
-          zIndex: 1,
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <div
-          style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            padding:
-              "clamp(3rem, 7vh, 5rem) clamp(1.5rem, 5vw, 5rem) clamp(2rem, 5vh, 4rem)",
-          }}
-          className="bg-lime-600"
-        >
-          <div className="flex gap-3 flex-col md:flex-row justify-between w-full">
-            <Link
-              href="/contact"
-              className="flex gap-2 items-center"
-              style={{ width: "fit-content" }}
-            >
-              <h2
-                style={{
-                  fontSize: "clamp(3.5rem, 10.5vw, 9.5rem)",
-                  fontWeight: 300,
-                  lineHeight: 0.88,
-                  letterSpacing: "-0.03em",
-                  margin: 0,
-                  color: "white",
-                }}
-              >
-                Let&apos;s talk
-              </h2>
-              <span
-                className="footer-arrow text-black"
-                style={{
-                  fontSize: "clamp(2.5rem, 7vw, 6rem)",
-                  lineHeight: 1,
-                  marginTop: "auto",
-                  alignSelf: "flex-end",
-                }}
-              >
-                ↗
-              </span>
-            </Link>
-            <div className="flex gap-3 flex-col md:flex-row py-12">
+      <div className="relative z-[1] flex flex-1 flex-col">
+        <div className="px-margin-x flex flex-1 flex-col bg-lime-600 py-32">
+          <div className="flex w-full flex-col items-center gap-3 min-[1256px]:flex-row md:items-center md:justify-between">
+            <div>
+              <Link href="/contact" className="flex w-fit items-center gap-2">
+                <h2 className="md:[text-8rem] text-[6rem] leading-[0.88] font-light tracking-[-0.03em] text-white lg:text-[9.5rem]">
+                  Let&apos;s talk
+                </h2>
+                <span className="footer-arrow mt-auto self-end text-[4rem] leading-none text-black md:text-[5rem] lg:text-[6rem]">
+                  ↗
+                </span>
+              </Link>
+              <div className="mt-[clamp(2rem,4vh,3.5rem)] flex flex-wrap items-baseline gap-[clamp(1.5rem,4vw,4rem)]">
+                <span className="text-base tracking-[0.1em] uppercase">
+                  Lamachour, Pokhara · +977 9700886505
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col gap-3 py-12 md:flex-row">
               <Link
                 href="/#services"
-                className="btn-outline bg-black border-black text-2xl sm:text-3xl px-10 py-5 font-light"
+                className="btn-outline border-black bg-black px-10 py-5 text-2xl font-light sm:text-3xl"
               >
                 See what we do
               </Link>
               <Link
                 href="/contact"
-                className="btn-outline text-2xl sm:text-3xl px-10 py-5 font-light"
+                className="btn-outline px-10 py-5 text-2xl font-light max-md:w-full sm:text-3xl"
               >
                 Start a project
               </Link>
             </div>
           </div>
-
-          <div
-            style={{
-              display: "flex",
-              alignItems: "baseline",
-              gap: "clamp(1.5rem, 4vw, 4rem)",
-              marginTop: "clamp(2rem, 4vh, 3.5rem)",
-              flexWrap: "wrap",
-            }}
-          >
-            <a
-              href="mailto:hello@yetinepal.com"
-              style={{
-                fontSize: "clamp(0.9rem, 1.6vw, 1.25rem)",
-                textDecoration: "none",
-                borderBottom: "1px solid rgba(255,255,255,0.15)",
-                paddingBottom: "0.15rem",
-                letterSpacing: "0.01em",
-                transition: "color 0.2s, border-color 0.2s",
-              }}
-            >
-              hello@yetinepal.com
-            </a>
-            <span
-              style={{
-                fontSize: "1rem",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-              }}
-            >
-              Lamachour, Pokhara · +977 9700886505
-            </span>
-          </div>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "1.5rem",
-            padding: "0 clamp(1.5rem, 5vw, 5rem)",
-            marginBottom: "2.5rem",
-            marginTop: "2rem",
-          }}
-        >
-          <div
-            style={{
-              flex: 1,
-              height: 1,
-              background:
-                "linear-gradient(90deg, rgba(255,255,255,0.08) 0%, rgba(0,113,227,0.25) 50%, rgba(255,255,255,0.03) 100%)",
-            }}
-          />
-          <span
-            style={{
-              fontSize: "0.6rem",
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.8)",
-              flexShrink: 0,
-            }}
-          >
+        <div className="mt-8 mb-10 flex items-center gap-6 px-[clamp(1.5rem,5vw,5rem)]">
+          <div className="h-px flex-1 bg-[linear-gradient(90deg,rgba(255,255,255,0.08)_0%,rgba(0,113,227,0.25)_50%,rgba(255,255,255,0.03)_100%)]" />
+          <span className="shrink-0 text-[0.6rem] tracking-[0.2em] text-white/80 uppercase">
             PKR
           </span>
         </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))",
-            gap: "2rem 3rem",
-            padding: "0 clamp(1.5rem, 5vw, 5rem) clamp(3rem, 6vh, 4.5rem)",
-          }}
-        >
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(130px,1fr))] gap-x-12 gap-y-8 px-[clamp(1.5rem,5vw,5rem)] pb-[clamp(3rem,6vh,4.5rem)]">
           <div>
-            <p
-              style={{
-                fontSize: "0.6rem",
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.4)",
-                marginBottom: "1rem",
-              }}
-            >
+            <p className="mb-4 text-[0.6rem] tracking-[0.2em] text-white/40 uppercase">
               Studio
             </p>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            <ul className="m-0 list-none p-0">
               {studio.map((s) => (
-                <li key={s}>
+                <li key={s.label}>
                   <Link
-                    href="#"
-                    className="text-[#999] text-[16px] tracking-tight hover:text-[#bbb] hover:underline transition-colors duration-200"
+                    href={s.href}
+                    className="text-[16px] tracking-tight text-[#999] transition-colors duration-200 hover:text-[#bbb] hover:underline"
                   >
-                    {s}
+                    {s.label}
                   </Link>
                 </li>
               ))}
@@ -217,23 +86,15 @@ export default function Footer() {
           </div>
 
           <div>
-            <p
-              style={{
-                fontSize: "0.6rem",
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.4)",
-                marginBottom: "1rem",
-              }}
-            >
+            <p className="mb-4 text-[0.6rem] tracking-[0.2em] text-white/40 uppercase">
               Services
             </p>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            <ul className="m-0 list-none p-0">
               {services.map((s) => (
                 <li key={s}>
                   <Link
                     href="#services"
-                    className="text-[#999] text-[16px] tracking-tight hover:text-[#bbb] hover:underline transition-colors duration-200"
+                    className="text-[16px] tracking-tight text-[#999] transition-colors duration-200 hover:text-[#bbb] hover:underline"
                   >
                     {s}
                   </Link>
@@ -243,23 +104,15 @@ export default function Footer() {
           </div>
 
           <div>
-            <p
-              style={{
-                fontSize: "0.6rem",
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.4)",
-                marginBottom: "1rem",
-              }}
-            >
+            <p className="mb-4 text-[0.6rem] tracking-[0.2em] text-white/40 uppercase">
               Social
             </p>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            <ul className="m-0 list-none p-0">
               {["Facebook"].map((s) => (
                 <li key={s}>
                   <Link
                     href="https://www.facebook.com/@theyetinepal"
-                    className="text-[#999] text-[16px] tracking-tight hover:text-[#bbb] hover:underline transition-colors duration-200"
+                    className="text-[16px] tracking-tight text-[#999] transition-colors duration-200 hover:text-[#bbb] hover:underline"
                     target="_blank"
                   >
                     {s}
@@ -269,115 +122,36 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div
-            style={{
-              gridColumn: "span 1",
-              border: "1px solid rgba(255,255,255,0.06)",
-              padding: "1.25rem 1.5rem",
-              position: "relative",
-              background: "rgba(255,255,255,0.02)",
-            }}
-          >
-            <p
-              style={{
-                fontSize: "0.6rem",
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.4)",
-                marginBottom: "0.75rem",
-              }}
-            >
+          <div className="relative col-span-1 border border-white/[0.06] bg-white/[0.02] px-6 py-5">
+            <p className="mb-3 text-[0.6rem] tracking-[0.2em] text-white/40 uppercase">
               Location
             </p>
-            <p
-              style={{
-                fontSize: "0.95rem",
-                color: "rgba(255,255,255,0.7)",
-                lineHeight: 1.4,
-              }}
-            >
+            <p className="text-[0.95rem] leading-[1.4] text-white/70">
               Lamachour
               <br />
               Pokhara, Nepal
             </p>
             <span
               aria-hidden="true"
-              style={{
-                position: "absolute",
-                bottom: "0.75rem",
-                right: "1rem",
-                fontSize: "1.5rem",
-                color: "rgba(0,113,227,0.4)",
-              }}
+              className="absolute right-4 bottom-3 text-2xl text-[rgba(0,113,227,0.4)]"
             >
               ◈
             </span>
           </div>
         </div>
 
-        <div
-          style={{
-            borderTop: "1px solid rgba(255,255,255,0.05)",
-            padding:
-              "1.25rem clamp(1.5rem, 5vw, 5rem) 1.5rem clamp(1.5rem, 5vw, 5rem)",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-end",
-            flexWrap: "wrap",
-            gap: "0.5rem",
-          }}
-        >
-          <span
-            style={{
-              fontSize: "0.65rem",
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.4)",
-            }}
-          >
+        <div className="flex flex-wrap items-end justify-between gap-2 border-t border-white/[0.05] px-[clamp(1.5rem,5vw,5rem)] pt-5 pb-6">
+          <span className="text-[0.65rem] tracking-[0.12em] text-white/40 uppercase">
             © 2026 Yeti Nepal
           </span>
-          <div
-            style={{
-              padding: "10rem clamp(1.5rem, 5vw, 5rem) 2rem",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "2.5rem",
-            }}
-          >
-            <div
-              className="text-white mt-10 flex items-center gap-4"
-              style={{ userSelect: "none" }}
-            >
-              <LogoMark
-                style={{
-                  height: "clamp(2rem, 6vw, 4rem)",
-                  width: "auto",
-                }}
-              />
-              <span
-                style={{
-                  fontSize: "clamp(2.5rem, 8vw, 5rem)",
-                  fontWeight: 700,
-                  letterSpacing: "-0.03em",
-                  textTransform: "uppercase",
-                  lineHeight: 1,
-                }}
-              >
+          <div className="flex flex-col items-center justify-center gap-10 px-[clamp(1.5rem,5vw,5rem)] pt-[10rem] pb-8">
+            <div className="mt-10 flex items-center gap-4 text-white select-none">
+              <span className="text-[4rem] leading-none font-bold tracking-[-0.03em] uppercase">
                 Yeti Nepal
               </span>
             </div>
           </div>
-          <span
-            style={{
-              fontSize: "0.65rem",
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.4)",
-            }}
-          >
+          <span className="text-[0.65rem] tracking-[0.12em] text-white/40 uppercase">
             From the himalayas to the world.
           </span>
         </div>

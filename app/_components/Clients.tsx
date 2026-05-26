@@ -18,24 +18,24 @@ const clients = [
 export function ClientGrid() {
   return (
     <div
-      className="border border-brand/60"
+      className="border-brand/60 border"
       style={{
         backgroundImage: `linear-gradient(45deg, var(--color-brand) 1px, transparent 2px)`,
         backgroundSize: "6px 6px",
       }}
     >
-      <ul className="grid grid-cols-[repeat(auto-fill,minmax(190px,1fr))] gap-3.5 p-4">
+      <ul className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-3 p-2 sm:grid-cols-[repeat(auto-fill,minmax(190px,1fr))] sm:gap-3.5 sm:p-4">
         {clients.map((client) => (
           <li
             key={client.name}
-            className="flex items-center justify-center bg-black h-20 py-8"
+            className="flex h-20 items-center justify-center bg-black py-8"
           >
             <Image
               src={client.logo}
               alt={client.name}
               width={120}
               height={48}
-              className="object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+              className="object-contain opacity-80 brightness-0 invert transition-opacity hover:opacity-100"
             />
           </li>
         ))}
@@ -46,8 +46,8 @@ export function ClientGrid() {
 
 export default function Clients() {
   return (
-    <section id="work" className="px-margin-x mt-6 scroll-mt-30">
-      <p className="text-center font-light uppercase text-sm tracking-widest text-white/90 mb-4">
+    <section id="work" className="px-margin-x scroll-mt-30 py-12">
+      <p className="mb-4 text-center text-sm font-light tracking-widest text-white/90 uppercase">
         Proud to Work With
       </p>
       <ClientGrid />
