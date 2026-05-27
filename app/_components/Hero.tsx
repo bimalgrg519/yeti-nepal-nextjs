@@ -1,66 +1,47 @@
-import MuxPlayer from "@mux/mux-player-react";
-import Image from "next/image";
 import Link from "next/link";
-
-const brands = [
-  "Airbnb",
-  "Shopify",
-  "Linear",
-  "Vercel",
-  "Notion",
-  "Stripe",
-  "Figma",
-  "Atlassian",
-  "Slack",
-  "GitHub",
-];
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[82vh] overflow-hidden flex flex-col">
-      <MuxPlayer
-        src="https://stream.mux.com/QegJZC2TTrWYc9ugth7eek1cgILqpv016nvVZFLJDRUk.m3u8?max_resolution=1080p&min_resolution=720p&redundant_streams=true"
+    <section className="relative flex h-[82vh] w-full flex-col overflow-hidden">
+      <video
+        className="absolute inset-0 h-full w-full object-cover object-center"
+        src="/hero-video.mp4"
+        poster="/hero-skeleton-img.png"
         autoPlay
         muted
         loop
         playsInline
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          "--media-object-fit": "cover",
-          "--media-object-position": "center",
-        }}
+        preload="auto"
+        aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-black/70 z-10" />
+      <div className="absolute inset-0 z-10 bg-black/70" />
 
-      <div className="flex-1 flex flex-col justify-center items-start px-margin-x relative z-10">
-        <div className="flex flex-col w-full">
+      <div className="px-margin-x relative z-10 flex flex-1 flex-col items-start justify-center">
+        <div className="flex w-full flex-col">
           <div>
             <h1 className="reveal text-page-heading-xl">From the himalayas</h1>
             <h1 className="reveal text-page-heading-xl">to the world.</h1>
           </div>
           <p
-            className="reveal w-fit pt-12 text-body-xl max-w-[36ch]"
+            className="reveal text-body-xl w-fit max-w-[36ch] pt-12"
             style={{ transitionDelay: ".05s" }}
           >
             Helping businesses grow with clean design, fast websites, and
             scalable digital solutions.
           </p>
           <div
-            className="reveal flex gap-2 flex-col md:flex-row pt-12"
+            className="reveal flex flex-col gap-2 pt-12 md:flex-row"
             style={{ transitionDelay: ".1s" }}
           >
             <Link
               href="/#services"
-              className="btn-primary text-xl sm:text-2xl px-6 py-3 font-light max-md:w-full"
+              className="btn-primary px-6 py-3 text-xl font-light max-md:w-full sm:text-2xl"
             >
               See what we do
             </Link>
             <Link
               href="/contact"
-              className="btn-outline text-xl sm:text-2xl px-6 py-3 font-light max-md:w-full"
+              className="btn-outline px-6 py-3 text-xl font-light max-md:w-full sm:text-2xl"
             >
               Start a project
             </Link>
